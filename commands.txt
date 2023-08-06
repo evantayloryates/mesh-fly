@@ -1,0 +1,9 @@
+BUILD APP
+docker build -t mesh-fly:latest .
+
+RUN APP LOCALLY
+IMAGE_ID=$(docker images --format '{{.Repository}}:{{.Tag}} {{.ID}}' | grep '^mesh-fly:latest' | awk '{print $2}')
+docker run -p 8080:8080 -i -t $IMAGE_ID
+
+DEPLOY APP
+fly deploy

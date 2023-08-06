@@ -7,3 +7,9 @@ docker run -p 8080:8080 -i -t $IMAGE_ID
 
 DEPLOY APP
 fly deploy
+
+
+MISC FLY COMMANDS
+fly status --watch
+fly logs
+fly ssh console

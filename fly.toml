@@ -55,6 +55,6 @@ processes = []
     path = "/healthcheck"
     protocol = "http"
     restart_limit = 0
-    timeout = 500
+    timeout = 1000
     tls_skip_verify = false
     [services.http_checks.headers]

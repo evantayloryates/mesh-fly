@@ -44,7 +44,7 @@ RUN npm run build
 FROM base
 
 ENV LITEFS_DIR="/litefs"
-ENV DATABASE_URL="file:$LITEFS_DIR/data/sqlite.db"
+ENV DATABASE_URL="file:$LITEFS_DIR/sqlite.db"
 ENV PORT="8080"
 ENV NODE_ENV="production"
 

@@ -44,8 +44,10 @@ RUN npm run build
 FROM base
 
 ENV LITEFS_DIR="/litefs"
-ENV DATABASE_URL="file:$LITEFS_DIR/sqlite.db"
-ENV PORT="8080"
+ENV DATABASE_FILENAME="$LITEFS_DIR/sqlite.db"
+ENV DATABASE_URL="file:$DATABASE_FILENAME"
+ENV INTERNAL_PORT="8080"
+ENV PORT="8081"
 ENV NODE_ENV="production"
 
 # NOT WORKING (src: https://www.epicweb.dev/tutorials/deploy-web-applications/persisting-data-and-automatic-deployment/add-a-sqlite-console-shortcut-with-the-dockerfile)

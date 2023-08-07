@@ -8,9 +8,13 @@ data:
   # Path to internal data storage.
   dir: "/data/litefs"
 
+proxy:
+  addr: "${INTERNAL_PORT}"
+  target: "localhost:${PORT}"
+  db: "${DATABASE_FILENAME}"
+
 # The lease section specifies how the cluster will be managed. We're using the
 # "consul" lease type so that our application can dynamically change the primary.
-
 # These environment variables will be available in your Fly.io application.
 # You must specify "experiement.enable_consul" for FLY_CONSUL_URL to be available.
 lease:
